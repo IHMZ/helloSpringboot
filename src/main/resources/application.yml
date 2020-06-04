@@ -1,0 +1,42 @@
+#user:
+#  username: HMZ
+#  password: 123456
+
+person:
+  name: ZZZ
+  phone: 1317779034
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/springboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource 默认数据源：com.zaxxer.hikari.HikariDataSource
+  jpa:
+    database: mysql #数据库厂商
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  main:
+    allow-bean-definition-overriding: true
+  redis: #Redis
+    port: 6379
+    host: 192.168.202.128
+  thymeleaf:
+    cache: false
+
+
+
+mybatis:
+  config-location: classpath:/mybatis/mybatis-config.xml # 指定主配置文件
+  mapper-locations: classpath:/mybatis/mapper/*.xml #指定xml映射文件路径
+  type-aliases-package: com.atguigu.springboot.bean
+
+#logging:
+#  level: com.atguigu.springboot:debug #配置日志
+logging:
+  level:
+    com.atguigu.springboot: debug # 配置日志

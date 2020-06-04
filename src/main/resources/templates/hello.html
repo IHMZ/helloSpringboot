@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<!--这句声明使用thymeleaf标签-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${hello}"></p>
+<br>
+[[${hello}]]
+
+<form th:action="@{/thymeleaf}">
+<button>提交</button>
+</form>
+
+
+<table border="1">
+    <tr>
+        <th>序号</th>
+        <th>姓名</th>
+        <th>地址</th>
+    </tr>
+    <tr th:each="user,index:${users}">
+        <td th:text="${index.count}"></td>
+        <td th:text="${user.getUsername()}"></td>
+        <td th:text="${user.getPassword()}"></td>
+    </tr>
+
+</table>
+<br>
+</body>
+</html>
